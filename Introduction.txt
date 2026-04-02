@@ -1,0 +1,102 @@
+-- What is SQL?
+
+-- SQL (Structured Query Language) is a standard programming language used to store, manage, retrieve, and manipulate data in a relational database.
+
+-- SQL helps us talk to the database.
+
+-- If a database is like a big digital cupboard 📂, SQL is the language we use to open it, search data, insert data, update data, and delete data.
+
+-- Why Do We Use SQL?
+-- We use SQL to:
+-- Insert data into tables
+-- Retrieve data (SELECT data)
+-- Update existing data
+-- Delete data
+-- Create and modify tables & databases
+-- Control access & permissions
+
+-- Uses of SQL (Real-World)
+-- SQL is used in:
+-- 🏦 Banking systems (account details, transactions)
+-- 🛒 E-commerce websites (orders, customers, products)
+-- 🏥 Hospitals (patient records)
+-- 🎓 Colleges (student management systems)
+-- 📊 Data analysis & Business Intelligence
+
+use zukun;
+select * from employee_records;
+
+use class;
+select * from users;
+where age =18
+
+select * from bank_account
+where name ='Rahul';
+
+create database newclass1;
+use class2;
+use zukun;
+use world;
+
+use newclass1;
+
+create table batch11 (name varchar(10),id int,salary int);
+
+
+insert INTO class1 values('mani',1,4000);
+insert INTO class1 values('nimal',2,2000);
+insert INTO class1 values('mani',3,000);
+
+
+select * from employee_records
+where Country ='India';
+
+
+
+select * from class1
+where name ='nimal';
+
+
+
+select * from employee_records;
+
+select Employee_Name,Age,Department from employee_records
+where Department ='Sales';
+
+
+
+-- MySQL DDL (Data Definition Language)
+-- What is DDL?
+
+-- DDL (Data Definition Language) commands are used to create, modify, and delete database structures such as:
+
+
+
+-- DDL defines the structure (schema) of the database.
+
+-- Types of DDL Commands in MySQL
+
+-- Main DDL commands:
+
+-- CREATE
+
+-- ALTER
+
+-- DROP
+
+-- TRUNCATE
+
+-- RENAME
+
+use zukun;
+create table batch3 (name varchar(10),age int,salary int,location varchar(10));
+
+select * from batch3;
+
+insert into batch3 values('kumar',30,50000,'chennai');
+insert into batch3 values('mani',25,40000,'madurai');
+
+insert into staff values('karan',22,20000);
+
+
+select * from batch3pm;
