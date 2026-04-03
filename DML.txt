@@ -1,0 +1,40 @@
+-- 🔹 DML (Data Manipulation Language)
+-- 📌 Definition
+
+-- DML is used to manage and modify data inside a table.
+-- It does not change the table structure — it only works with the data.
+
+-- 1 INSERT – Add new data
+
+use zukun;
+
+
+
+create table customers (id int primary key,name varchar(10),city varchar(15));
+
+select * from customers;
+
+insert into customers value (1,'arun','chennai');
+
+INSERT INTO customers (id, name) VALUES (106, 'mani');
+
+drop table customers;
+-- 👉 Adds a new record to the table.
+
+
+-- 👉 Displays data from the table.
+
+-- UPDATE – Modify existing data
+
+
+UPDATE customers SET city = 'chennai' WHERE id = 106;
+
+UPDATE customers SET name = 'Ram' WHERE id = 106;
+
+
+select * from customers;
+
+-- 👉 Changes existing data.
+
+-- DELETE – Remove data
+DELETE FROM customers WHERE id = 106;
