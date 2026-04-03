@@ -1,0 +1,205 @@
+-- I Number Functions in MySQL
+-- Number functions are used to perform mathematical operations on numeric values.
+
+select 5+7
+
+-- 1. ABS()
+-- Definition: Returns the absolute (positive) value of a number.
+
+SELECT ABS(-25);
+
+
+-- 2. ROUND()
+-- Definition: Rounds a number to specified decimal places.
+
+SELECT ROUND(10.567);
+
+-- 3. CEIL() or CEILING()
+-- Definition: Returns the smallest integer greater than or equal to the number.
+
+SELECT CEIL(4.9);
+
+
+-- 4. FLOOR()
+-- Definition: Returns the largest integer less than or equal to the number.
+
+SELECT FLOOR(4.9);
+
+
+-- 5. MOD()
+-- Definition: Returns the remainder of a division.
+
+SELECT MOD(10,3);
+
+
+-- 6. POWER()
+-- Definition: Returns a number raised to the power of another number.
+
+SELECT POWER(3,5);
+
+
+-- 7. SQRT()
+-- Definition: Returns square root of a number.
+
+SELECT SQRT(120);
+
+
+-- 8. TRUNCATE()
+-- Definition: Removes decimal places without rounding.
+
+SELECT TRUNCATE(10.9876,3);
+
+
+
+
+-- II String Functions in MySQL
+-- String functions are used to manipulate text values.
+
+-- 1. UPPER()
+-- Definition: Converts text to uppercase.
+use zukun;
+SELECT UPPER(Employee_name) from employee_records;
+
+
+-- 2. LOWER()
+-- Definition: Converts text to lowercase.
+
+SELECT LOWER('MYSQL');
+
+
+-- 3. LENGTH()
+-- Definition: Returns the length of a string.
+
+SELECT LENGTH('Hello');
+
+-- 4. CONCAT()
+-- Definition: Combines multiple strings into one.
+
+SELECT CONCAT('Abdul', ' ', 'Rabeek');
+
+
+-- 5. SUBSTRING()
+-- Definition: Extracts part of a string.
+
+SELECT SUBSTRING('Database', 3, 5);
+
+
+-- 6. TRIM()
+-- Definition: Removes leading and trailing spaces.
+
+SELECT TRIM('   SQL      ');
+
+
+
+-- 7. LEFT()
+-- Definition: Returns left part of string.
+
+SELECT left('Database',6);
+
+
+-- 8. RIGHT()
+-- Definition: Returns right part of string.
+
+SELECT RIGHT('Database',5);
+
+
+-- 9. REPLACE()
+-- Definition: Replaces part of a string.
+
+SELECT REPLACE('I love SQL','love','hi');
+
+
+-- 10. REVERSE()
+-- Definition: Reverses the string.
+
+SELECT REVERSE('SQL');
+
+
+-- 11. INSTR()
+-- Definition: Returns position of substring.
+
+SELECT INSTR('Database','b');
+
+
+-- 12. LPAD()
+-- Definition: Adds characters to left side.
+
+SELECT LPAD('sql',19,'#');
+
+-- 13. RPAD()
+-- Definition: Adds characters to right side.
+
+SELECT RPAD('SQL',6,'*');
+
+
+
+-- III Date Functions in MySQL
+-- Date functions are used to work with date and time values.
+
+-- 1. NOW()
+-- Definition: Returns current date and time.
+
+SELECT NOW();
+
+
+
+-- 2. CURDATE()
+-- Definition: Returns current date.
+
+SELECT CURDATE();
+
+
+select * from employee_records;
+
+
+-- 3. DATEDIFF()
+-- Definition: Returns difference between two dates in days.
+
+SELECT Employee_Name,DATEDIFF('2026-04-03',Joining_date)  from employee_records;
+
+-- 4. DATE_ADD()
+-- Definition: Adds a time interval to a date.
+
+SELECT DATE_ADD('2026-04-01', INTERVAL 5 week);
+SELECT DATE_sub('2026-03-01', INTERVAL 5 year);
+
+
+
+-- 5. YEAR()
+-- Definition: Extracts year from date.
+
+SELECT YEAR('2026-03-01');
+
+
+-- 6. MONTH()
+-- Definition: Extracts month from date.
+
+SELECT MONTH('2026-03-01');
+
+-- 7. CURTIME()
+-- Definition: Returns current time.
+
+SELECT curtime();
+
+
+-- 8. DAY()
+-- Definition: Extracts day from date.
+
+SELECT DAY('2026-03-06');
+
+
+-- 9. MONTHNAME()
+-- Definition: Returns month name.
+
+SELECT MONTHNAME('2026-03-01');
+
+-- 10. DAYNAME()
+-- Definition: Returns day name.
+
+SELECT DAYNAME('2026-04-07');
+
+
+-- 11. LAST_DAY()
+-- Definition: Returns last date of the month.
+
+SELECT LAST_DAY('2026-04-01');
