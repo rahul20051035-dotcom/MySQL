@@ -1,0 +1,88 @@
+--  1. Comparison Operators
+
+-- Used to compare two values — result is TRUE, FALSE, or NULL.
+
+-- Operator	    Description	                Example	                                Result
+-- =	            Equal to	             SELECT 10 = 10;	                     TRUE
+-- != or <>	      Not equal to	             SELECT 10 <> 5;	                             TRUE
+-- >	            Greater than	         SELECT 10 > 5;	                             TRUE
+-- <	            Less than	             SELECT 10 < 5;	                         FALSE
+-- >=	            Greater than or equal    SELECT 10 >= 10;	                     TRUE
+-- <=	            Less than or equal	     SELECT 5 <= 10;	                     TRUE
+-- BETWEEN ... AND ..  Between a range	     SELECT 10 BETWEEN 5 AND 15;	         TRUE
+-- IN (...)	    Match any value in list      SELECT 'a' IN ('a','b');	                 TRUE
+-- NOT IN (...)	    Not in list	             SELECT 'x' NOT IN ('a','b');	         TRUE
+-- LIKE	            Pattern matching	     SELECT 'apple' LIKE 'a%';	             TRUE
+-- NOT LIKE	        Opposite of LIKE	      SELECT 'apple' NOT LIKE 'a%';	             FALSE
+-- IS NULL	       Check if value is NULL    SELECT NULL IS NULL;	             TRUE
+-- IS NOT NULL	  Check if value is not NUL  SELECT 'abc' IS NOT NULL;	             TRUE
+
+-- ✅ Example:
+
+-- SELECT * FROM students WHERE marks BETWEEN 50 AND 100;
+
+use zukun;
+select * from employee_records;
+
+select * from employee_records
+where Salary != 34513.67;
+
+select * from employee_records
+where Country != 'India';
+
+
+select * from employee_records
+where Age <50;
+
+select * from employee_records
+where Age >50;
+
+select * from employee_records
+where Age <= 50;
+
+
+select * from employee_records
+where age between 50 and 60;
+
+select * from employee_records
+where age in(55,40,28);
+
+select * from employee_records
+where Country in('India','Canada');
+
+
+select * from employee_records
+where Country not in('UK','Germany');
+
+select * from employee_records
+where Employee_Name like 'S%';
+
+select * from employee_records
+where Employee_Name not like '%S';
+
+select * from employee_records
+where Employee_Name is null;
+
+select * from employee_records
+where Employee_Name is not null;
+
+select * from employee_records;
+
+--  3. Logical Operators
+
+-- Used to combine multiple conditions.
+--  
+-- Operator	         Description	                             Example	                       Result
+-- AND	                 True if all conditions are true	    SELECT 10 > 5 AND 5 < 10;	       TRUE
+-- OR	                 True if any condition is true	        SELECT 10 > 5 OR 5 > 10;	       TRUE
+-- NOT	                 Reverse the condition	                SELECT NOT(10 > 5);	               FALSE
+
+select * from employee_records
+where age =70 and Country ='UK';
+
+select * from employee_records
+where age =50 or Country ='US';
+
+
+select * from employee_records
+where not age =50 ;
