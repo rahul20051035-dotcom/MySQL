@@ -1,0 +1,57 @@
+-- MySQL DDL (Data Definition Language)
+-- What is DDL?
+
+-- DDL (Data Definition Language) commands are used to create, modify, and delete database structures such as:
+
+
+
+-- DDL defines the structure (schema) of the database.
+
+-- Types of DDL Commands in MySQL
+
+-- Main DDL commands:
+
+-- CREATE
+
+-- ALTER
+
+-- DROP
+
+-- TRUNCATE
+
+-- RENAME
+
+use zukun;
+create table batch3 (name varchar(10),age int,salary int,location varchar(10));
+
+select * from batch3;
+
+insert into batch3pm values('kumar',30,50000,'chennai');
+insert into batch3pm values('mani',25,40000,'madurai');
+
+insert into staff values('karan',22,20000);
+
+
+select * from batch3;
+
+
+ALTER TABLE batch3 modify column location int;
+ALTER TABLE batch3 drop column location;
+ALTER TABLE batch3 add column department varchar(20);
+
+select * from batch3pm;
+
+use newclass1;
+
+
+
+RENAME TABLE batch3 TO batch3pm;
+
+truncate table batch3pm;
+
+drop table batch3pm;
+
+
+
+
+use world;
