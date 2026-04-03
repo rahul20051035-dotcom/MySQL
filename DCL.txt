@@ -1,0 +1,37 @@
+-- DCL (Data Control Language)
+
+-- DCL (Data Control Language) is used to control access and permissions to the database.
+
+-- It defines who can access what and what actions they can perform on database objects like tables, views, procedures, etc.
+
+-- 👉 Main DCL Commands:
+
+-- GRANT
+
+-- REVOKE
+
+-- GRANT Command
+-- ✅ Definition
+-- GRANT is used to give permissions to a user.
+
+-- You can allow a user to:
+
+-- SELECT (read data)
+
+-- INSERT (add data)
+
+-- UPDATE (modify data)
+
+-- DELETE (remove data)
+
+-- ALL (all permissions)
+
+use zukun;
+
+select * from class1;
+
+grant all on zukun.* to friend;
+
+
+
+revoke select,insert,delete ON zukun.class1 from friend;
