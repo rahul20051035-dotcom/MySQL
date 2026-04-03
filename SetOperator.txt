@@ -1,0 +1,63 @@
+-- SET Operators – Definition & Explanation
+-- SET operators are used to combine results of two SELECT queries.
+
+-- Both SELECT queries must have:
+-- ✔ Same number of columns
+-- ✔ Same data type
+-- ✔ Same order of columns
+
+-- 1. UNION
+-- Definition:
+-- Combines results of two queries and removes duplicates.
+
+use class2;
+
+create table students_a (id int,name varchar(15));
+
+insert into students_a values(1,'mani');
+insert into students_a values(2,'arun');
+insert into students_a values(3,'varun');
+insert into students_a values(4,'keerthi');
+insert into students_a values(5,'ram');
+
+create table students_b (id int,name varchar(15));
+
+insert into students_b values(101,'karan');
+insert into students_b values(2,'arun');
+insert into students_b values(111,'rose');
+insert into students_b values(4,'keerthi');
+insert into students_b values(4,'keerthi');
+
+select * from students_a;
+select * from students_b;
+
+
+SELECT name FROM students_a
+UNION
+SELECT name FROM students_b;
+
+
+-- 2. UNION ALL
+-- Definition:
+-- Combines results of two queries and keeps duplicates.
+SELECT name FROM students_a
+UNION ALL
+SELECT name FROM students_b;
+
+
+
+-- 3. INTERSECT
+-- Definition:
+-- Returns common records from both queries.
+-- ⚠ Note: MySQL 8.0.31+ supports INTERSECT
+-- SELECT name FROM students_a
+-- INTERSECT
+-- SELECT name FROM students_b;
+
+
+-- 4. EXCEPT (or MINUS in Oracle)
+-- Definition:
+-- Returns records from first query that are not present in second query.
+SELECT name FROM students_a                    
+EXCEPT
+SELECT name FROM students_b;
