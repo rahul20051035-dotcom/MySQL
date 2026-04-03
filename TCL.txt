@@ -1,0 +1,70 @@
+--  What is TCL 
+
+-- Definition:
+-- TCL commands are used to control transactions in a database.
+-- Transaction na – multiple SQL statements oru logical unit aa execute agum process.
+
+use zukun;
+CREATE TABLE bank_account (
+    acc_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    balance INT
+);
+
+INSERT INTO bank_account VALUES (1, 'Arun', 10000);
+INSERT INTO bank_account VALUES (2, 'Rahul', 15000);
+INSERT INTO bank_account VALUES (3, 'Priya', 20000); 
+
+select * from bank_account;
+
+drop table bank_account;
+
+
+
+-- rollback
+
+START TRANSACTION;
+
+UPDATE bank_account 
+SET balance = balance - 5000 
+WHERE acc_id = 3;
+
+select * from bank_account;
+
+
+
+ROLLBACK;
+
+
+
+-- savepoint   1   2    3     4 savepoint a  5  6  7   rollback a
+
+select * from bank_account;
+
+START TRANSACTION;
+
+UPDATE bank_account 
+SET balance = balance - 1000 
+WHERE acc_id = 2;
+
+UPDATE bank_account 
+SET balance = balance - 2500 
+WHERE acc_id = 2;
+
+select * from bank_account;
+
+SAVEPOINT sp1;     
+
+UPDATE bank_account 
+SET balance = balance + 5000 
+WHERE acc_id = 2;      
+
+UPDATE bank_account 
+SET balance = balance - 3000 
+WHERE acc_id = 2;   
+
+ROLLBACK TO sp1; 
+
+select * from bank_account;
+
+COMMIT;
